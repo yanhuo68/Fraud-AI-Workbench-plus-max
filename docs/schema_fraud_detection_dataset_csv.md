@@ -1,0 +1,14 @@
+| column | type |
+| --- | --- |
+| Transaction_ID | object |
+| User_ID | int64 |
+| Transaction_Amount | float64 |
+| Transaction_Type | object |
+| Time_of_Transaction | float64 |
+| Device_Used | object |
+| Location | object |
+| Previous_Fraudulent_Transactions | int64 |
+| Account_Age | int64 |
+| Number_of_Transactions_Last_24H | int64 |
+| Payment_Method | object |
+| Fraudulent | int64 |

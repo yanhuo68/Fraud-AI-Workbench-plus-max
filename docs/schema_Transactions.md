@@ -1,0 +1,11 @@
+| column | type |
+| --- | --- |
+| transaction_id | int64 |
+| user_id | int64 |
+| device_id | int64 |
+| location_id | int64 |
+| amount | float64 |
+| type | object |
+| time | object |
+| is_fraudulent | int64 |
+| payment_method | object |

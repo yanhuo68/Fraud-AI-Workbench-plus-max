@@ -1,0 +1,38 @@
+graph TD
+
+  %% === Entry: User & UI ===
+  U[User / Streamlit UI] --> Q[Question Router<br/>(Intent Classifier)]
+
+  %% === SQL RAG Pipeline ===
+  subgraph SQL_RAG_Pipeline["SQL RAG Pipeline (LangGraph)"]
+    Q -->|Data-related question| SP[SQL Planner Agent<br/>(LLM → SQL)]
+    SP --> SE[SQL Executor<br/>(SQLite on transactions)]
+    SE --> SC[SQL Critic & Explainer<br/>(LLM + rules)]
+  end
+
+  %% === Knowledge-Base RAG ===
+  subgraph KB_RAG["Fraud Knowledge-Base RAG"]
+    Q -->|Conceptual / domain question| KR[KB Retriever<br/>(FAISS over docs/)]
+    KR --> KG[KB Answer Generator<br/>(LLM grounded in context)]
+  end
+
+  %% === ML & Risk Analytics ===
+  subgraph ML_Analytics["ML & Risk Analytics"]
+    U --> MD[Model Dashboard<br/>(IF, RF, LOF, etc.)]
+    MD --> MM[Model Metrics Engine<br/>(AUC, F1, confusion matrix)]
+    MD --> ME[Model Interpretation Agent<br/>(LLM explains metrics)]
+    ME --> RS[Risk Scoring Agent<br/>(Combines rules + model scores)]
+  end
+
+  %% === Safety / Policy Layer ===
+  subgraph Safety_Layer["Safety & Policy Agents"]
+    SC --> SA[Safety / Policy Agent<br/>(LLM Safety Policies)]
+    KG --> SA
+    ME --> SA
+    RS --> SA
+  end
+
+  %% === Outputs back to UI ===
+  SA --> O1[UI: SQL Answer + Explanation]
+  SA --> O2[UI: KB Answer]
+  SA --> O3[UI: Model & Risk Report]

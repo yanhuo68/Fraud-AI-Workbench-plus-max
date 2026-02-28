@@ -1,0 +1,10 @@
+| column | type |
+| --- | --- |
+| user_id | int64 |
+| name | object |
+| email | object |
+| phone | object |
+| account_age | int64 |
+| risk_score | float64 |
+| registration_date | object |
+| status | object |

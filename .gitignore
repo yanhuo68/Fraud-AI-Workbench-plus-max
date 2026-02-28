@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Data directories - EXCEPT data/raw/ (demo files)
+data/db/
+data/uploads/
+data/kb/
+data/graph/
+data/erd/
+data/models/
+data/reports/
+data/generated/
+data/ml/
+
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.cache
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Coverage
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# Testing
+.pytest_cache/
+.tox/
+
+# Large files
+*.zip
+*.tar.gz
+*.rar
+
+# User Documentation
+Instruction_to_Fraud_Detection_AI_Workbench.docx
